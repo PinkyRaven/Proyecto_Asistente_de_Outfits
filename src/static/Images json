@@ -1,0 +1,46 @@
+import json
+from flask import Flask, render_template, request
+
+# Archivo JSON que contiene las imágenes
+json_data = {
+    "tops": [
+        "https://ar.pinterest.com/pin/980166306398177122/",
+        "https://ar.pinterest.com/pin/980166306398177113/"
+    ],
+    "bottoms": [
+        "https://ar.pinterest.com/pin/980166306398177085/",
+        "https://ar.pinterest.com/pin/980166306398177105/"
+    ],
+    "accesorios": [
+        "https://ar.pinterest.com/pin/980166306398177142/",
+        "https://ar.pinterest.com/pin/980166306398177144/"
+    ],
+    "zapatos": [
+        "https://ar.pinterest.com/pin/980166306398177160/",
+        "https://ar.pinterest.com/pin/980166306398177166/"
+    ]
+}
+
+# Guardamos el JSON en un archivo local
+with open("images.json", "w") as file:
+    json.dump(json_data, file, indent=4)
+
+# Flask app
+app = Flask(__name__)
+
+# Ruta principal
+@app.route('/')
+def home():
+    # Cargamos los datos del JSON
+    with open("images.json", "r") as file:
+        data = json.load(file)
+    return render_template("index.html", data=data)
+
+# Ruta para procesar la selección
+@app.route('/generar', methods=['POST'])
+def generar():
+    seleccion = request.form.getlist('seleccion')
+    return render_template("resultado.html", seleccion=seleccion)
+
+if __name__ == '__main__':
+    app.run(debug=True)
