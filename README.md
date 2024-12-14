@@ -1,40 +1,57 @@
-# Asistente Virtual de Outfits de Moda con OpenAI y DALL-E
+# Crear el archivo README.md descargable con el contenido actualizado
+readme_content = """
+# Asistente Virtual de Outfits de Moda con OpenAI, DALL-E y Pandas
 
-## Introducción
-### Nombre del Proyecto
-Asistente Virtual de Outfits de Moda con OpenAI y DALL-E
+## **Introducción**
 
-### Presentación del Problema
-Los usuarios suelen encontrar difícil visualizar outfits personalizados utilizando herramientas de IA debido a la necesidad de escribir prompts detallados y precisos. Esto puede limitar la accesibilidad y creatividad de quienes desean explorar opciones de moda.
+### **Nombre del Proyecto**  
+Asistente Virtual de Outfits de Moda con OpenAI, DALL-E y Visualización de Datos.
 
-### Propuesta de Solución
-Este proyecto ofrece una solución interactiva que automatiza la generación de prompts basados en las selecciones del usuario, permitiendo obtener imágenes generadas automáticamente por DALL-E de manera sencilla y visual.
-
-## Objetivos
-- Crear una interfaz amigable para seleccionar prendas y accesorios.
-- Automatizar la generación de prompts para la API de DALL-E.
-- Proporcionar visualizaciones de outfits personalizadas basadas en elecciones de los usuarios.
-
-## Metodología
-1. **Interfaz de Usuario**: Implementar una página web interactiva para la selección de prendas.
-2. **Backend**: Utilizar Flask para procesar las selecciones y generar prompts dinámicos.
-3. **Integración con OpenAI**: Generar imágenes de outfits utilizando DALL-E.
-
-## Herramientas y Tecnologías
-- Lenguaje: Python (Flask).
-- API: OpenAI GPT-3.5 y DALL-E.
-- Frontend: HTML, CSS, JavaScript.
+### **Presentación del Problema**  
+Seleccionar y combinar outfits personalizados utilizando IA puede ser un desafío para usuarios no familiarizados con prompts detallados o visualizaciones claras. Este proyecto busca simplificar el proceso mediante una interfaz interactiva y visual.
 
 ---
 
-## Instrucciones para Ejecutar el Proyecto
+## **Propuesta de Solución**  
 
-1. Instala las dependencias necesarias ejecutando:
+Ofrecemos una herramienta que permite:  
+1. **Selección de prendas y accesorios a través de una interfaz estilo Tinder**.  
+2. **Generación automática de prompts personalizados para OpenAI DALL-E**.  
+3. **Creación de imágenes de outfits basadas en la selección del usuario**.  
+4. **Visualización de estadísticas sobre preferencias de selección utilizando gráficos con Pandas y Matplotlib**.
+
+---
+
+## **Objetivos**
+
+1. Crear una interfaz intuitiva que permita al usuario seleccionar prendas.  
+2. Generar prompts dinámicos basados en las elecciones realizadas.  
+3. Utilizar las imágenes generadas para mostrar combinaciones creativas de outfits.  
+4. Proporcionar análisis estadísticos visuales de las selecciones de los usuarios.  
+
+---
+
+## **Nuevas Funcionalidades**
+
+- **Banco de Imágenes**: Se incluyen imágenes obtenidas desde Pinterest para la selección de prendas.  
+- **Gráficos y Estadísticas**: Uso de Pandas y Matplotlib para analizar y visualizar datos de selección.  
+- **Selección Interactiva**: Sistema estilo Tinder para deslizar prendas hacia "favorito" o "rechazado".  
+
+---
+
+## **Herramientas y Tecnologías**
+
+- **Lenguaje**: Python (Flask para el backend).  
+- **API**: OpenAI (GPT-3.5 y DALL-E).  
+- **Frontend**: HTML, CSS, JavaScript.  
+- **Análisis de Datos**: Pandas y Matplotlib para generar gráficos.  
+
+---
+
+## **Instrucciones para Ejecutar el Proyecto**
+
+1. **Instalar Dependencias**  
+   Ejecuta el siguiente comando en tu terminal:  
    ```bash
    pip install -r requirements.txt
-   ```
-2. Inicia la aplicación:
-   ```bash
-   python src/app.py
-   ```
-3. Abre tu navegador y accede a `http://127.0.0.1:5000`.
+
