@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfit Selector</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/swipe.js"></script>
+</head>
+<body>
+    <h1>Selecciona tus prendas favoritas</h1>
+    <div class="cards-container">
+        <div class="card" data-item="Camiseta">
+            <img src="https://via.placeholder.com/200" alt="Camiseta">
+        </div>
+        <div class="card" data-item="Pantalón">
+            <img src="https://via.placeholder.com/200" alt="Pantalón">
+        </div>
+        <div class="card" data-item="Chaqueta">
+            <img src="https://via.placeholder.com/200" alt="Chaqueta">
+        </div>
+    </div>
+    <button id="generate">Generar Outfit</button>
+    <div id="result"></div>
+
+    <script>
+        let selectedItems = [];
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                const item = card.getAttribute('data-item');
+                selectedItems.push(item);
+                card.style.border = "2px solid green";  // Marca como seleccionada
+            });
+        });
+
+        document.getElementById('generate').addEventListener('click', async () => {
+            const response = await fetch('/generate_outfit', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({selected_items: selectedItems})
+            });
+            const data = await response.json();
+            if (data.image_url) {
+                document.getElementById('result').innerHTML = `<img src="${data.image_url}" alt="Outfit generado">`;
+            } else {
+                alert("Error: " + data.error);
+            }
+        });
+    </script>
+</body>
+</html>
