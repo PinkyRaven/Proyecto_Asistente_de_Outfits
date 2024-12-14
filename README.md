@@ -1,4 +1,4 @@
-# Crear el archivo README.md descargable con el contenido actualizado
+# Crear el archivo README.md 
 readme_content = """
 # Asistente Virtual de Outfits de Moda con OpenAI, DALL-E y Pandas
 
